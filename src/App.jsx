@@ -3,11 +3,11 @@ import Button from "./components/button";
 function App() {
   return (
     <>
-      <Button />;
-      <Navbar />
-      <ItemListContainer />
-      <Counter />
-    </>
+  <Button />;
+  <Navbar />
+  <ItemListContainer />
+  <Counter />
+   </>
   );
 }
 export default App;

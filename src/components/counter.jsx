@@ -1,8 +1,8 @@
 import { useState } from "react";
 function Counter() {
   const [count, setCount] = useState(0);
-  const handleRestar = () => setCount(count - 1);
-  const handleSumar = () => setCount(count + 1);
+  const handleRestar = () => setCount(prevCount => prevCount - 1);
+  const handleSumar = () => setCount(prevCount => prevCount + 1);
   return (
     <div
       style={{
