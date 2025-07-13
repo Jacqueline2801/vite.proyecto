@@ -11,3 +11,13 @@ function App() {
   );
 }
 export default App;
+import NavBar from "./components/navbar";
+
+function App() {
+  return (
+    <>
+      <NavBar />
+      <Routes>{/* tus rutas */}</Routes>
+    </>
+  );
+}
