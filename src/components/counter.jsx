@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 function Counter() {
   const [count, setCount] = useState(0);
-  const handleRestar = () => setCount(prevCount => prevCount - 1);
-  const handleSumar = () => setCount(prevCount => prevCount + 1);
+  const handleRestar = () => setCount(count - 1);
+  const handleSumar = () => setCount(count+ 1);
+  useEffect (()=>{
+    console.log("se disparo el efecto")
+  }, [count])
   return (
     <div
       style={{

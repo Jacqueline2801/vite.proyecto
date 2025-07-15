@@ -1,4 +1,5 @@
-function ItemListContainer() {
+import { useState, useEffect  } from "react";
+import Itemlist from "./ItemList"
   const productos = [
   {
     "id": 1,
@@ -191,17 +192,22 @@ function ItemListContainer() {
   }
 
 ];
-
+function ItemListContainer() {
+  const [items, setItems] = useState([])
+  const getProductos= () => new Promise(( resolve, reject)=>{
+    if (productos.length){
+      resolve (productos)
+    } else {
+      reject ("no hay productos")
+    }
+  })
+  useEffect (()=>{
+    getProductos ()
+    .then (res => setItems (res))
+    .catch(err => alert (err))
+  }, [])
   return (
-    <div>
-      {productos.map((prod) => (
-        <div key={prod.id}>
-          <img src={prod.imagen} alt={prod.nombre} style={{ width: '100px' }} />
-          <h3>{prod.nombre}</h3>
-          <p>Precio total: ${prod.precio}</p>
-          <p>Precio por unidad: ${prod.precioxunidad}</p>
-        </div>
-      ))}
-    </div>
-  );
+  <Itemlist items= {items} />
+  )
 }
+export default ItemListContainer
