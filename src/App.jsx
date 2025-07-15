@@ -1,23 +1,16 @@
 import "./App.css";
-import Button from "./components/button";
-function App() {
-  return (
-    <>
-  <Button />;
-  <Navbar />
-  <ItemListContainer />
-  <Counter />
-   </>
-  );
-}
-export default App;
 import NavBar from "./components/navbar";
+import { Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
       <NavBar />
-      <Routes>{/* tus rutas */}</Routes>
+      <Routes>{}</Routes>
     </>
   );
 }
+
+export default App;
+
+
