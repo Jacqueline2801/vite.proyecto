@@ -1,15 +1,12 @@
 import React from "react";
 import CartWidget from "./CartWidget";
-// src/components/NavBar.jsx
 import { Link } from 'react-router-dom';
-
 function NavBar() {
   return (
-    <nav>
+    <nav className="navbar">
       <Link to="/">Inicio</Link>
       <Link to="/productos">Productos</Link>
+      <CartWidget />
     </nav>
   );
 }
-
-export default NavBar;

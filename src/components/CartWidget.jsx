@@ -1,12 +1,12 @@
 import React from "react";
 import "../App.css"
+import { Link } from "react-router-dom";
 
-const CartWidget = () => {
+function CartWidget () {
   return (
-    <div className="cart-widget">
-      🛒
-      <span className="cart-count">3</span>
-    </div>
+    <Button as= {Link} to= {"/about"}> Cart 
+      🛒3
+    </Button>
   );
 };
 export default CartWidget;

@@ -1,5 +1,6 @@
-import { useState, useEffect  } from "react";
+import { useState, useEffect, useContext } from "react";
 import Itemlist from "./ItemList"
+import { CartContext } from "../context/CartContext";
   const productos = [
   {
     "id": 1,
@@ -194,6 +195,7 @@ import Itemlist from "./ItemList"
 ];
 function ItemListContainer() {
   const [items, setItems] = useState([])
+  const algo = useContext(CartContext)
   const getProductos= () => new Promise(( resolve, reject)=>{
     if (productos.length){
       resolve (productos)
